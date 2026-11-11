@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurelia Vance — Graphic & Visual Designer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Dark Liquid Glass Theme */
+        body {
+            background-color: #0c0c0e;
+            background-image: 
+                radial-gradient(at 15% 15%, rgba(65, 55, 90, 0.3) 0px, transparent 50%),
+                radial-gradient(at 85% 85%, rgba(40, 70, 70, 0.25) 0px, transparent 50%);
+            color: #e4e4e7;
+        }
+        .glass-panel {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.4);
+        }
+        .glass-card {
+            background: rgba(30, 30, 35, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            background: rgba(45, 45, 55, 0.7);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.7);
+        }
+        .modal-backdrop {
+            background: rgba(10, 10, 12, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-zinc-700 selection:text-zinc-100">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl" id="siteHeader">
+        <div class="glass-panel rounded-full px-6 py-3 flex items-center justify-between">
+            <a href="#" class="font-serif italic text-xl font-semibold tracking-wide text-zinc-100 hover:text-zinc-300 transition-colors">Aurelia Vance</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+                <a href="#work" class="hover:text-zinc-100 transition-colors">Work</a>
+                <a href="#about" class="hover:text-zinc-100 transition-colors">About</a>
+                <a href="#services" class="hover:text-zinc-100 transition-colors">Services</a>
+                <a href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
+            </nav>
+            <button id="openContactBtn" class="bg-zinc-100 text-zinc-900 hover:bg-zinc-200 text-xs font-medium px-5 py-2.5 rounded-full transition-all shadow-sm transform hover:scale-105 active:scale-95">Let's Talk</button>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-20 px-6 max-w-5xl mx-auto space-y-28">
+
+        <!-- Hero Section -->
+        <section class="min-h-[75vh] flex flex-col justify-center items-center text-center pt-8">
+            <div class="glass-panel inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-zinc-300 mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Available for Freelance & Collaborations
+            </div>
+            <h1 class="font-serif text-5xl md:text-7xl font-normal tracking-tight text-zinc-100 max-w-2xl leading-[1.15] mb-6">
+                Crafting visual identities with <span class="italic font-light text-zinc-400">elegance</span> & intent.
+            </h1>
+            <p class="text-zinc-400 text-base md:text-lg max-w-xl font-light leading-relaxed mb-10">
+                Graphic & brand identity designer specializing in minimalist layouts, thoughtful typography, and tactile digital experiences.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#work" class="bg-zinc-100 text-zinc-900 hover:bg-zinc-200 font-medium px-8 py-3.5 rounded-full transition-all text-sm shadow-sm transform hover:scale-105 active:scale-95">Explore Portfolio</a>
+                <button id="heroContactBtn" class="glass-card hover:bg-zinc-800 text-zinc-200 font-medium px-8 py-3.5 rounded-full transition-all text-sm transform hover:scale-105 active:scale-95">Get in Touch</button>
+            </div>
+        </section>
+
+        <!-- Selected Work Section -->
+        <section id="work" class="space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-zinc-500 font-semibold">Selected Projects</span>
+                    <h2 class="font-serif text-3xl md:text-4xl text-zinc-100 mt-1">Featured Works (2024–2026)</h2>
+                </div>
+                <p class="text-zinc-400 text-sm max-w-xs font-light">Click any project card to view a high-resolution dark glass preview.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card glass-card rounded-3xl p-5 flex flex-col justify-between group cursor-pointer" 
+                     data-title="Verve Atelier" 
+                     data-category="Branding / Print" 
+                     data-desc="A minimalist visual identity and packaging system crafted for an artisanal fragrance lab. Focused on dark tactile paper weights and subtle metallic debossed typography.">
+                    <div class="bg-zinc-900/60 rounded-2xl h-72 mb-5 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-all">
+                        <span class="font-serif text-zinc-400 italic text-xl group-hover:scale-110 transition-transform duration-700">Brand Identity Mockup</span>
+                    </div>
+                    <div class="space-y-2 px-2 pb-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-medium text-zinc-100 group-hover:text-zinc-300 transition-colors">Verve Atelier</h3>
+                            <span class="text-xs font-mono text-zinc-500">Branding / Print</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm font-light">A minimalist visual identity and packaging system for an artisanal fragrance lab.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card rounded-3xl p-5 flex flex-col justify-between group cursor-pointer" 
+                     data-title="Monolith Magazine" 
+                     data-category="Editorial Design" 
+                     data-desc="Typography-driven layout design exploring modern architectural dark forms, expansive negative space, and moody monochromatic photography.">
+                    <div class="bg-zinc-900/60 rounded-2xl h-72 mb-5 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-all">
+                        <span class="font-serif text-zinc-400 italic text-xl group-hover:scale-110 transition-transform duration-700">Editorial Layout</span>
+                    </div>
+                    <div class="space-y-2 px-2 pb-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-medium text-zinc-100 group-hover:text-zinc-300 transition-colors">Monolith Magazine</h3>
+                            <span class="text-xs font-mono text-zinc-500">Editorial Design</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm font-light">Typography-driven layout design exploring modern architectural forms and light.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card rounded-3xl p-5 flex flex-col justify-between group cursor-pointer" 
+                     data-title="Komorebi UI" 
+                     data-category="Digital / UI" 
+                     data-desc="A calm, organic dark digital design system built with tactile glassmorphism elements and muted earthy ambient palettes for mindfulness applications.">
+                    <div class="bg-zinc-900/60 rounded-2xl h-72 mb-5 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-all">
+                        <span class="font-serif text-zinc-400 italic text-xl group-hover:scale-110 transition-transform duration-700">Digital Design System</span>
+                    </div>
+                    <div class="space-y-2 px-2 pb-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-medium text-zinc-100 group-hover:text-zinc-300 transition-colors">Komorebi UI</h3>
+                            <span class="text-xs font-mono text-zinc-500">Digital / UI</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm font-light">A calm, organic digital design system built for mindfulness applications.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass-card rounded-3xl p-5 flex flex-col justify-between group cursor-pointer" 
+                     data-title="Silent Geometry" 
+                     data-category="Exhibition Posters" 
+                     data-desc="A limited-edition screen printed poster series focused on dark asymmetric grid structures, Swiss typography, and tactile ink textures.">
+                    <div class="bg-zinc-900/60 rounded-2xl h-72 mb-5 overflow-hidden relative flex items-center justify-center border border-white/5 group-hover:border-white/20 transition-all">
+                        <span class="font-serif text-zinc-400 italic text-xl group-hover:scale-110 transition-transform duration-700">Poster Series</span>
+                    </div>
+                    <div class="space-y-2 px-2 pb-2">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-serif text-xl font-medium text-zinc-100 group-hover:text-zinc-300 transition-colors">Silent Geometry</h3>
+                            <span class="text-xs font-mono text-zinc-500">Exhibition Posters</span>
+                        </div>
+                        <p class="text-zinc-400 text-sm font-light">A limited-edition screen printed poster series focused on asymmetric grid structures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="glass-panel rounded-3xl p-8 md:p-12 space-y-6">
+            <span class="text-xs uppercase tracking-widest text-zinc-500 font-semibold">About Me</span>
+            <h2 class="font-serif text-3xl md:text-4xl text-zinc-100">Design rooted in reduction, clarity, and enduring visual harmony.</h2>
+            <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed">
+                I believe effective design isn't about adding more elements, but stripping away the non-essential until only the core message remains. With over 5 years of experience collaborating with independent studios and conscious brands, I bridge strategic thinking with meticulous aesthetic execution.
+            </p>
+            <div class="pt-4 flex flex-wrap gap-3">
+                <span class="glass-card px-4 py-2 rounded-full text-xs font-mono text-zinc-300">Brand Strategy</span>
+                <span class="glass-card px-4 py-2 rounded-full text-xs font-mono text-zinc-300">Typography</span>
+                <span class="glass-card px-4 py-2 rounded-full text-xs font-mono text-zinc-300">Editorial Layout</span>
+                <span class="glass-card px-4 py-2 rounded-full text-xs font-mono text-zinc-300">Packaging Design</span>
+                <span class="glass-card px-4 py-2 rounded-full text-xs font-mono text-zinc-300">Art Direction</span>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="space-y-8">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-zinc-500 font-semibold">Expertise</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-zinc-100 mt-1">What I Can Do For You</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card rounded-2xl p-6 space-y-3">
+                    <div class="text-zinc-500 font-mono text-sm">01</div>
+                    <h3 class="font-serif text-xl text-zinc-100 font-medium">Brand Identity</h3>
+                    <p class="text-zinc-400 text-sm font-light">Comprehensive visual systems including logos, color palettes, typography guidelines, and brand collateral.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 space-y-3">
+                    <div class="text-zinc-500 font-mono text-sm">02</div>
+                    <h3 class="font-serif text-xl text-zinc-100 font-medium">Editorial & Print</h3>
+                    <p class="text-zinc-400 text-sm font-light">Books, magazines, annual reports,
